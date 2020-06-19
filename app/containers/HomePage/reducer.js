@@ -116,20 +116,14 @@ const initialState = fromJS({
       contractAddress: null,
       decimals: 18,
     },
-    omg: {
-      name: 'OmiseGo',
+    ouro: {
+      name: 'ouro',
       contractAddress: '0xbcad569fe454e78ca90e4120d89b6b69f8db402f',
       decimals: 18,
     },
-    bat: {
-      name: 'Basic Attention Token',
-      contractAddress: '0xf3a1c162bc4a82ca5227d7c542c20dd087d2c37b',
-      decimals: 18,
-    },
-    mkr: {
-      symbol: 'mkr',
-      name: 'Maker',
-      contractAddress: '0xece9fa304cc965b00afc186f5d0281a00d3dbbfd',
+    krg: {
+      name: 'krg',
+      contractAddress: '0xbcad569fe454e78ca90e4120d89b6b69f8db4023',
       decimals: 18,
     },
   },

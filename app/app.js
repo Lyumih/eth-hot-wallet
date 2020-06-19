@@ -55,6 +55,8 @@ import '!file-loader?name=[name]!./vendor/github/CNAME'; // for github - domain 
 /* eslint-enable import/no-unresolved, import/extensions */
 
 // token icons
+import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/ouro.png';
+import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/krg.png';
 import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/bat.png';
 import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/bnb.png';
 import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/bnt.png';
