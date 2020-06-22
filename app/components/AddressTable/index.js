@@ -220,7 +220,7 @@ function AddressTable(props) {
       <Column
         title="Icon"
         key="Icon"
-        width="12px"
+        width="50px"
         render={(text, record) => (
           <TokenIcon tokenSymbol={record.token} />
         )}
