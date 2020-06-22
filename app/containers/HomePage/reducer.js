@@ -116,14 +116,14 @@ const initialState = fromJS({
       contractAddress: null,
       decimals: 18,
     },
-    ouro: {
-      name: 'ouro',
-      contractAddress: '0xbcad569fe454e78ca90e4120d89b6b69f8db402f',
-      decimals: 18,
-    },
+    // ouro: {
+    //   name: 'ouro',
+    //   contractAddress: null,
+    //   decimals: 18,
+    // },
     krg: {
       name: 'krg',
-      contractAddress: '0xbcad569fe454e78ca90e4120d89b6b69f8db4023',
+      contractAddress: '0x32A8cD4D04D5F2e5De30AD73ef0A377eca2Fdd98',
       decimals: 18,
     },
   },
