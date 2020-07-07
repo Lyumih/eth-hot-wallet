@@ -76,7 +76,16 @@ function Header(props) {
     <HeaderWrapped className="clearfix">
       <Row type="flex" align="middle" justify="space-between" style={{ backgroundColor: '#fff' }}>
         <Col sm={{ span: 6, offset: 1 }} xs={24}>
-          <Logo />
+          <Row type="flex" align="middle">
+            <Col sm={{ span: 8, offset: 2 }} xs={24}>
+              <Logo />
+            </Col>
+            <Col sm={{ span: 12 }} xs={24} style={{ textAlign: 'left' }}>
+              <a href="https://ouroboros-crypto.com/" target="_blank" rel="noopener">
+                Homepage
+              </a>
+            </Col>
+          </Row>
         </Col>
         <Col sm={{ span: 8, offset: 2 }} xs={24}>
           <Row type="flex" align="middle" justify="center">
