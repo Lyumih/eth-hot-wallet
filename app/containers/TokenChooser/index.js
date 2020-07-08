@@ -10,6 +10,7 @@ import { Modal, Button } from 'antd';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
+import { FormattedMessage } from 'react-intl';
 
 // import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
@@ -42,7 +43,7 @@ function TokenChooser(props) {
     <div style={{ maxWidth: '600px', margin: 'auto' }}>
       <Modal
         visible={isShowTokenChooser}
-        title={`Select Tokens - ${networkName}`}
+        title={<span><FormattedMessage id="selectTokens" /> - {networkName}</span>}
         onOk={onHideTokenChooser}
         onCancel={onHideTokenChooser}
         footer={null}
@@ -54,10 +55,10 @@ function TokenChooser(props) {
         />
         <br />
         <Button type="primary" onClick={() => onConfirmNewTokenInfo(chosenTokens, networkName)} disabled={false} >
-          Update
+          <FormattedMessage id="update" />
         </Button>{' '}
         <Button onClick={() => onConfirmNewTokenInfo()} disabled={false} >
-          Remove Tokens
+          <FormattedMessage id="removeTokens" />
         </Button>
       </Modal>
     </div>

@@ -6,6 +6,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
+import { FormattedMessage } from 'react-intl';
 
 const H1 = styled.h1`
   font-size: 22px;
@@ -23,11 +24,11 @@ font-weight: 400;
 function WelcomeText() {
   return (
     <div>
-      <H1>Welcome to ETH Hot Wallet <br />To begin, create or restore Ethereum wallet<br /></H1>
+      <H1><FormattedMessage id="welcome" /> <FormattedMessage id="walletName" />.<br /><FormattedMessage id="toBegin" /><br /></H1>
       <H2>
-        ETH Hot wallet is a zero client. Connection to Ethereum network is made via infura / local node. <br />
-        Keystore is encrypted using the password. When the wallet is locked, you can only view balances. <br />
-        All keys are saved inside the browser and never sent.
+        <FormattedMessage id="walletName" /> <FormattedMessage id="zeroClient" /> <FormattedMessage id="info1" /><br />
+        <FormattedMessage id="info2" /> <br />
+        <FormattedMessage id="info3" />
       </H2>
     </div>
   );

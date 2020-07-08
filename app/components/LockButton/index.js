@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import { Button, Popconfirm } from 'antd';
 // import styled from 'styled-components';
 
-// import { FormattedMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 // import messages from './messages';
 
 function LockButton(props) {
@@ -19,7 +19,7 @@ function LockButton(props) {
     return (
       <Popconfirm key="close_wallet" placement="bottom" title="Comfirm locking wallet" onConfirm={onLockWallet} okText="Confirm" cancelText="Abort">
         <Button icon="lock" type="default" size="large" >
-          Lock Wallet
+          <FormattedMessage id="lockWallet" />
         </Button>
       </Popconfirm>
     );
@@ -27,7 +27,7 @@ function LockButton(props) {
 
   return (
     <Button icon="unlock" type="default" size="large" onClick={onUnlockWallet}>
-      Unlock Wallet
+      <FormattedMessage id="unlockWallet" />
     </Button>
   );
 }

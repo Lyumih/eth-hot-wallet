@@ -20,7 +20,7 @@ import 'sanitize.css/sanitize.css';
 import App from 'containers/App';
 
 // Import Language Provider
-// import LanguageProvider from 'containers/LanguageProvider';
+import LanguageProvider from 'containers/LanguageProvider';
 
 // Load the favicon, the manifest.json file and the .htaccess file
 /* eslint-disable import/no-unresolved, import/extensions */
@@ -88,7 +88,7 @@ import configureStore from './store';
 
 // Will be added in the future
 // Import i18n messages
-// import { translationMessages } from './i18n';
+import { translationMessages } from './i18n';
 
 // Import CSS reset and Global Styles
 import './global-styles';
@@ -102,11 +102,11 @@ const MOUNT_NODE = document.getElementById('app');
 const render = (messages) => { // eslint-disable-line
   ReactDOM.render(
     <Provider store={store}>
-      {/* <LanguageProvider messages={messages}> */}
-      <ConnectedRouter history={history}>
-        <App />
-      </ConnectedRouter>
-      {/* </LanguageProvider> */}
+      <LanguageProvider messages={messages}>
+        <ConnectedRouter history={history}>
+          <App />
+        </ConnectedRouter>
+      </LanguageProvider>
     </Provider>,
     MOUNT_NODE
   );
@@ -122,7 +122,7 @@ if (module.hot) {
   }); */
   module.hot.accept(['containers/App'], () => {
     ReactDOM.unmountComponentAtNode(MOUNT_NODE);
-    render();
+    render(translationMessages);
   });
 }
 
@@ -142,7 +142,7 @@ if (!window.Intl) {
 } else {
   render(translationMessages);
 } */
-render();
+render(translationMessages);
 
 // Install ServiceWorker and AppCache in the end since
 // it's not most important operation and if main code fails,

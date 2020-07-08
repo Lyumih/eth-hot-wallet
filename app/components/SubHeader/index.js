@@ -9,7 +9,8 @@ import { Button, Popconfirm } from 'antd';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import LockButton from 'components/LockButton';
-import IconButton from 'components/IconButton';
+import { FormattedMessage } from 'react-intl';
+// import IconButton from 'components/IconButton';
 const Div = styled.div`
   margin-top: 45px;
   .ant-btn {
@@ -38,10 +39,10 @@ function SubHeader(props) {
 
   const noWalletSubHeader = [
     <Button key="new_wallet" type="primary" size="large" onClick={onGenerateWallet}>
-      New wallet
+      <FormattedMessage id="newWallet" />
     </Button>,
     <Button key="restore_wallet" type="default" size="large" onClick={onShowRestoreWallet}>
-      Restore wallet
+      <FormattedMessage id="restoreWallet" />
     </Button>,
     /* optional laod / save buttons
      <IconButton
@@ -56,9 +57,16 @@ function SubHeader(props) {
 
   const existingWalletSubHeader = [
     <LockButton key="lock_button" {...lockButtonProps} />,
-    <Popconfirm key="close_wallet" placement="bottom" title="Wallet will be deleted from memory and LocalStorage" onConfirm={onCloseWallet} okText="Confirm" cancelText="Abort">
+    <Popconfirm
+      key="close_wallet"
+      placement="bottom"
+      title={<FormattedMessage id="deleteAlertMessage" />}
+      onConfirm={onCloseWallet}
+      okText={<FormattedMessage id="confirm" />}
+      cancelText={<FormattedMessage id="abort" />}
+    >
       <Button key="close_wallet" type="default" icon="close-square-o" size="large">
-        Close wallet
+        <FormattedMessage id="closeWallet" />
       </Button>
     </Popconfirm>,
     /* optional laod / save buttons

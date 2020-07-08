@@ -8,7 +8,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Modal, Button } from 'antd';
 import { connect } from 'react-redux';
-// import { FormattedMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 
@@ -110,10 +110,10 @@ function SendToken(props) {
 
   const modalFooter = [
     <Button key="reset" type="default" size="large" onClick={onAbortTransaction}>
-      Reset
+      <FormattedMessage id="reset" />
     </Button>,
     <Button key="close" type="default" size="large" onClick={onHideSendToken}>
-      Close
+      <FormattedMessage id="close" />
     </Button>,
   ];
 
@@ -121,7 +121,7 @@ function SendToken(props) {
     <div style={{ maxWidth: '600px', margin: 'auto' }}>
       <Modal
         visible={isShowSendToken}
-        title="Send Token"
+        title={<FormattedMessage id="sendToken" />}
         onOk={onHideSendToken}
         onCancel={onHideSendToken}
         footer={modalFooter}
@@ -132,7 +132,7 @@ function SendToken(props) {
         <SendTo {...SendToProps} /> <br />
         <SendGasPrice {...SendGasPriceProps} /> <br />
         <Button onClick={onConfirmSendTransaction} disabled={locked} >
-          Create transaction
+          <FormattedMessage id="createTransaction" />
         </Button>
         <SendConfirmationView {...SendConfirmationViewProps} />
         <br />
