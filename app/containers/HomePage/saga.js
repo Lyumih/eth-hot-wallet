@@ -210,7 +210,7 @@ export function* generateAddress() {
     try {
       const balance = yield call(getEthBalancePromise, newAddress);
       yield put(changeBalance(newAddress, 'eth', balance));
-    } catch (err) { }  // eslint-disable-line 
+    } catch (err) { }  // eslint-disable-line
   } catch (err) {
     yield call(timer, 1000); // eye candy
     yield put(generateAddressError(err.message));
@@ -330,6 +330,9 @@ export function* loadWalletS() {
 
     const dump = localStore.get(localStorageKey);
     if (!dump) {
+      if (process.env.NODE_ENV === 'production') {
+        yield put(loadNetwork(defaultNetwork));
+      }
       throw new Error('No keystore found in localStorage');
     }
     // console.log(`Load len: ${JSON.stringify(dump).length}`);

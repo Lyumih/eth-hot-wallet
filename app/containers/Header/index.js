@@ -84,7 +84,7 @@ function Header(props) {
   return (
     <HeaderWrapped className="clearfix">
       <Row type="flex" align="middle" justify="space-between" style={{ backgroundColor: '#fff' }}>
-        <Col sm={{ span: 6, offset: 1 }} xs={24}>
+        <Col sm={{ span: 8, offset: 1 }} xs={24}>
           <Row type="flex" align="middle">
             <Col sm={{ span: 8, offset: 2 }} xs={24}>
               <Logo />
@@ -96,10 +96,14 @@ function Header(props) {
             </Col>
           </Row>
         </Col>
-        <Col sm={{ span: 8, offset: 2 }} xs={24}>
+        <Col sm={{ span: 9, offset: 2 }} xs={24}>
           <Row type="flex" align="middle" justify="center">
             <NetworkIndicator {...networkIndicatorProps} />
-            <NetworkMenu {...networkMenuProps} />
+            {
+              process.env.NODE_ENV !== 'production' && (
+                <NetworkMenu {...networkMenuProps} />
+              )
+            }
             <LanguageMenu {...languageMenuProps} />
           </Row>
         </Col>

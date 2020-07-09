@@ -33,7 +33,7 @@ export const TokenSelection = {
       decimals: 18,
       description: 'KRG Wallet',
       url: 'https://krg.com',
-    }
+    },
   ],
   'Ropsten Testnet': [
     {
