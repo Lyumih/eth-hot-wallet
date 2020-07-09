@@ -12,13 +12,13 @@ import walletLogo from './logo.png';
 const Div = styled.div`
   height: 80px;
   font-size: 18px;
-  line-height: 80px; 
+  line-height: 80px;
 `;
 
 const Img = styled.img`
-  height: 40px;
+  height: 80px;
   line-height: 80px;
-  width: 60px;
+  width: 80px;
   margin-right: 10px;
 `;
 
