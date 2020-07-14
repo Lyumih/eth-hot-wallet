@@ -330,12 +330,8 @@ export function* loadWalletS() {
 
     const dump = localStore.get(localStorageKey);
     if (!dump) {
-      if (process.env.NODE_ENV === 'production') {
-        yield put(loadNetwork(defaultNetwork));
-      }
       throw new Error('No keystore found in localStorage');
     }
-    // console.log(`Load len: ${JSON.stringify(dump).length}`);
 
     const ksDump = dump.ks;
     const ks = lightwallet.keystore.deserialize(ksDump);
