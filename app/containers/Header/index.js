@@ -89,11 +89,11 @@ function Header(props) {
             <Col sm={{ span: 8, offset: 2 }} xs={24}>
               <Logo />
             </Col>
-            <Col sm={{ span: 12 }} xs={24} style={{ textAlign: 'left' }}>
+            {/* <Col sm={{ span: 12 }} xs={24} style={{ textAlign: 'left' }}>
               <a href="https://ouroboros-crypto.com/" target="_blank" rel="noopener">
                 <FormattedMessage id="homepage" />
               </a>
-            </Col>
+            </Col> */}
           </Row>
         </Col>
         <Col sm={{ span: 9, offset: 2 }} xs={24}>
