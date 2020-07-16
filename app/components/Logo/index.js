@@ -7,7 +7,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { website } from 'utils/constants';
-import walletLogo from './logo.png';
+import walletLogo from './KRG_logo_hot_white.svg';
 
 const Div = styled.div`
   height: 80px;

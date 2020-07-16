@@ -21,8 +21,11 @@ const AddrTable = styled(Table)`
   max-width: 860px;
   margin-left: auto;
   margin-right: auto;
+  th {
+    background: transparent!important;
+  }
   tbody{
-    background: white;
+    background: transparent;
   }
   .ant-table{
     font-size: 13px !important;
@@ -30,6 +33,9 @@ const AddrTable = styled(Table)`
   th.columnCenter,
   td.columnCenter{
     text-align: center;
+  }
+  td,th span {
+    color: white;
   }
 `;
 
