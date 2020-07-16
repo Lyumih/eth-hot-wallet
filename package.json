@@ -43,7 +43,7 @@
     "test": "cross-env NODE_ENV=test jest --coverage",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -s ./app/images -p 6006",
     "build-storybook": "build-storybook"
   },
   "lint-staged": {
@@ -256,6 +256,7 @@
   },
   "devDependencies": {
     "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-knobs": "^5.3.19",
     "@storybook/addon-links": "^5.3.19",
     "@storybook/addons": "^5.3.19",
     "@storybook/react": "^5.3.19",
@@ -306,7 +307,6 @@
     "rimraf": "2.6.2",
     "shelljs": "0.7.7",
     "sinon": "2.3.2",
-    "storybook-addon-i18n": "^5.1.13",
     "storybook-addon-intl": "^2.4.1",
     "style-loader": "0.18.1",
     "url-loader": "0.5.8",

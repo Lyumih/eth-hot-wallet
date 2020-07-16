@@ -3,8 +3,7 @@ import React from 'react';
 import WelcomeText from './index'
 
 export default {
-  title: 'Welcome',
+  title: 'Components/WelcomeText',
 };
 
-export const Text = () => <div>Это Велком история</div>;
-export const TryWelcome = () => <WelcomeText></WelcomeText>
+export const base = () => <WelcomeText />
