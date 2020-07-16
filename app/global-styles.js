@@ -17,7 +17,7 @@ injectGlobal`
   }
 
   #app {
-    background-color: #f8f8f8;
+    background: radial-gradient(closest-corner, #9231f3 0%, #1105fd 90%);
     min-height: 100%;
     min-width: 100%;
   }
