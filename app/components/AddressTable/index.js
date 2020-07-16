@@ -27,6 +27,9 @@ const AddrTable = styled(Table)`
   tbody{
     background: transparent;
   }
+  tr:hover > td{
+    background: transparent;
+  }
   .ant-table{
     font-size: 13px !important;
   }
