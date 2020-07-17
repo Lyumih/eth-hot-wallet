@@ -57,7 +57,7 @@ function TokenChooser(props) {
         <Button type="primary" onClick={() => onConfirmNewTokenInfo(chosenTokens, networkName)} disabled={false} >
           <FormattedMessage id="update" />
         </Button>{' '}
-        <Button onClick={() => onConfirmNewTokenInfo()} disabled={false} >
+        <Button  onClick={() => onConfirmNewTokenInfo()} disabled={false} >
           <FormattedMessage id="removeTokens" />
         </Button>
       </Modal>
