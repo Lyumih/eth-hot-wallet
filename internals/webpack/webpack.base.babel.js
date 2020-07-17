@@ -4,6 +4,11 @@
 
 const path = require('path');
 const webpack = require('webpack');
+const fs  = require('fs');
+
+
+const lessToJs = require('less-vars-to-js');
+const themeVariables = lessToJs(fs.readFileSync(path.join(__dirname, '../../app/ant-theme-vars.less'), 'utf8'));
 
 // Remove this line once the following warning goes away (it was meant for webpack loader authors not users):
 // 'DeprecationWarning: loaderUtils.parseQuery() received a non-string value which can be problematic,
@@ -29,7 +34,7 @@ module.exports = (options) => ({
             plugins: [
               ['import', {
                 libraryName: 'antd',
-                style: 'css',
+                style: true,
               }],
             ],
           },
@@ -52,6 +57,20 @@ module.exports = (options) => ({
       {
         test: /\.(eot|svg|otf|ttf|woff|woff2)$/,
         use: 'file-loader',
+      },
+      {
+        test: /\.less$/,
+
+        use: [
+          {loader: "style-loader"},
+          {loader: "css-loader"},
+          {loader: "less-loader",
+            options: {
+              modifyVars: themeVariables,
+              javascriptEnabled: true,
+            }
+          }
+        ]
       },
       {
         test: /\.(jpg|png|gif)$/,

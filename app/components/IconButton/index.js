@@ -22,6 +22,7 @@ const Btn = ({ error, popconfirm, text, loading, disabled, popconfirmMsg, onClic
   <Button
     icon={icon}
     type="default"
+    ghost
     size="large"
     onClick={popconfirmMsg ? null : onClick}
     disabled={disabled}

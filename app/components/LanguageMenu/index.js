@@ -42,7 +42,7 @@ function LanguageMenu(props) {
 
   return (
     <Dropdown overlay={menu}>
-      <StyledButton size="large" icon="flag">
+      <StyledButton size="large" icon="flag" ghost>
         {languages[locale]}<Icon type="down" />
       </StyledButton>
     </Dropdown>

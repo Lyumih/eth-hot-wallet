@@ -73,6 +73,7 @@ function AddressTableFooter(props, { intl }) {
         icon="bars"
         onClick={onShowTokenChooser}
         type="primary"
+
         // onClick, loading, error, disabled, popconfirmMsg
       />
       <br /><br />

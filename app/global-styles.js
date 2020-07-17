@@ -22,6 +22,11 @@ injectGlobal`
     min-width: 100%;
   }
 
+  // button {
+  //   background: transparent!important;
+  //   color: white!important;
+  // }
+
   p,
   label {
     font-family: Georgia, Times, 'Times New Roman', serif;
