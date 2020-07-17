@@ -125,6 +125,8 @@ function SendToken(props) {
         onOk={onHideSendToken}
         onCancel={onHideSendToken}
         footer={modalFooter}
+
+
       >
         <SendFrom {...SendFromProps} /> <br />
         <SendAmount {...SendAmountProps} />
