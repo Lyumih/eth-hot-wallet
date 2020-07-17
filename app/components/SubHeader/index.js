@@ -65,7 +65,7 @@ function SubHeader(props) {
       okText={<FormattedMessage id="confirm" />}
       cancelText={<FormattedMessage id="abort" />}
     >
-      <Button key="close_wallet" type="default" icon="close-square-o" size="large">
+      <Button key="close_wallet" type="default" ghost icon="close-square-o" size="large">
         <FormattedMessage id="closeWallet" />
       </Button>
     </Popconfirm>,

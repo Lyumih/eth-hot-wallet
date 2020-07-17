@@ -72,7 +72,6 @@ function AddressTableFooter(props, { intl }) {
         text={intl.formatMessage({ id: 'selectTokens' })}
         icon="bars"
         onClick={onShowTokenChooser}
-        type="primary"
 
         // onClick, loading, error, disabled, popconfirmMsg
       />

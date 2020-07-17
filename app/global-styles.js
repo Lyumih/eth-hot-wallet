@@ -41,4 +41,12 @@ injectGlobal`
     text-align:center !important;
     margin: 0 auto !important;
   }
+
+  // button.ant-btn-background-ghost:hover {
+  //   opacity: 0.85;
+  //   transition: 0.5s ease opacity;
+  //   color: white;
+  //   border-color: white;
+  // }
+
 `;

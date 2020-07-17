@@ -18,7 +18,7 @@ function LockButton(props) {
   if (password) {
     return (
       <Popconfirm key="close_wallet" placement="bottom" title="Comfirm locking wallet" onConfirm={onLockWallet} okText="Confirm" cancelText="Abort">
-        <Button icon="lock" type="default" size="large" >
+        <Button icon="lock" type="default" ghost size="large" >
           <FormattedMessage id="lockWallet" />
         </Button>
       </Popconfirm>
@@ -26,7 +26,7 @@ function LockButton(props) {
   }
 
   return (
-    <Button icon="unlock" type="default" size="large" onClick={onUnlockWallet}>
+    <Button icon="unlock" type="default" ghost size="large" onClick={onUnlockWallet}>
       <FormattedMessage id="unlockWallet" />
     </Button>
   );
