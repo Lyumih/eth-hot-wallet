@@ -109,10 +109,10 @@ function SendToken(props) {
   const SendTokenSymbolProps = { sendTokenSymbol, tokenInfoList, onChangeFrom, locked };
 
   const modalFooter = [
-    <Button key="reset" type="default" size="large" onClick={onAbortTransaction}>
+    <Button key="reset" type="default" ghost size="large" onClick={onAbortTransaction}>
       <FormattedMessage id="reset" />
     </Button>,
-    <Button key="close" type="default" size="large" onClick={onHideSendToken}>
+    <Button key="close" type="default" ghost size="large" onClick={onHideSendToken}>
       <FormattedMessage id="close" />
     </Button>,
   ];
@@ -125,6 +125,8 @@ function SendToken(props) {
         onOk={onHideSendToken}
         onCancel={onHideSendToken}
         footer={modalFooter}
+        className="modal-background"
+        wrapClassName="modal-wrap-background"
 
 
       >
@@ -133,7 +135,7 @@ function SendToken(props) {
         <SendTokenSymbol {...SendTokenSymbolProps} /><br /> <br />
         <SendTo {...SendToProps} /> <br />
         <SendGasPrice {...SendGasPriceProps} /> <br />
-        <Button onClick={onConfirmSendTransaction} disabled={locked} >
+        <Button ghost onClick={onConfirmSendTransaction} disabled={locked} >
           <FormattedMessage id="createTransaction" />
         </Button>
         <SendConfirmationView {...SendConfirmationViewProps} />

@@ -38,10 +38,10 @@ function SubHeader(props) {
   const lockButtonProps = { onLockWallet, password, onUnlockWallet };
 
   const noWalletSubHeader = [
-    <Button key="new_wallet" type="primary" size="large" onClick={onGenerateWallet}>
+    <Button key="new_wallet" type="default" ghost size="large" onClick={onGenerateWallet}>
       <FormattedMessage id="newWallet" />
     </Button>,
-    <Button key="restore_wallet" type="default" size="large" onClick={onShowRestoreWallet}>
+    <Button key="restore_wallet" type="default" ghost size="large" onClick={onShowRestoreWallet}>
       <FormattedMessage id="restoreWallet" />
     </Button>,
     /* optional laod / save buttons

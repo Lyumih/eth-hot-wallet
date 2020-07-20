@@ -252,7 +252,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
           <RestoreWalletModal {...restoreWalletModalProps} />
           <AddressView {...addressViewProps} />
           <SendToken {...sendTokenProps} />
-          <TokenChooser {...tokenChooserProps} />
+          {/*<TokenChooser {...tokenChooserProps} />*/}
         </Content>
         {/* <PageFooter /> */}
       </div>

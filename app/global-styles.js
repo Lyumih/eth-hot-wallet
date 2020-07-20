@@ -22,11 +22,6 @@ injectGlobal`
     min-width: 100%;
   }
 
-  // button {
-  //   background: transparent!important;
-  //   color: white!important;
-  // }
-
   p,
   label {
     font-family: Georgia, Times, 'Times New Roman', serif;
@@ -42,11 +37,27 @@ injectGlobal`
     margin: 0 auto !important;
   }
 
-  // button.ant-btn-background-ghost:hover {
-  //   opacity: 0.85;
-  //   transition: 0.5s ease opacity;
-  //   color: white;
-  //   border-color: white;
-  // }
+  .ant-modal-content {
+    background: radial-gradient(closest-corner, #9231f3 0%, #1105fd 90%);
+  }
+
+  .ant-modal-content > .ant-modal-header {
+    background: transparent;
+  }
+
+  .ant-modal-content > .ant-modal-header > .ant-modal-title {
+    color: white;
+  }
+
+  .ant-select-selection {
+    background: transparent!important;
+  }
+
+  .ant-btn-background-ghost:hover, .ant-btn-background-ghost:focus {
+    border-color: white!important;
+    color: white!important;
+    opacity: 0.85;
+    transition: 0.5s ease opacity;
+  }
 
 `;
