@@ -254,6 +254,7 @@ function AddressTable(props) {
         filters={[{
           text: <FormattedMessage id="removeEmpty" />,
           value: '0 ETH',
+
         }]}
         onFilter={(value, record) => record.balance !== value}
       />

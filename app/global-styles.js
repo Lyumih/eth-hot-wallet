@@ -60,4 +60,87 @@ injectGlobal`
     transition: 0.5s ease opacity;
   }
 
+  .anticon-filter {
+    color: white!important;
+  }
+
+
+ #preloader {
+	 width: 100%;
+	 height: 100%;
+	 height: 100vh;
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 margin: 0;
+	 padding: 0;
+	 background: radial-gradient(closest-corner, #9231f3 0%, #1105fd 90%);
+}
+ #preloader .krg_logo {
+	 width: 70px;
+	 height: 150px;
+	 position: relative;
+	 display: block;
+}
+ @keyframes logo_appear {
+	 0% {
+		 opacity: 0;
+		 transform: translateY(-10px);
+	}
+	 100% {
+		 opacity: 1;
+		 transform: translateY(0px);
+	}
+}
+ @keyframes logo_flicker {
+	 0% {
+		 opacity: 1;
+	}
+	 50% {
+		 opacity: 0.6;
+	}
+	 100% {
+		 opacity: 1;
+	}
+}
+ #preloader .krg_logo svg {
+	 position: absolute;
+	 display: block;
+	 width: 100%;
+	 height: 100%;
+}
+ #preloader .krg_logo svg path {
+	 fill: #fff;
+}
+ #preloader .krg_logo svg#krg_logo_1 {
+	 opacity: 0;
+	 animation: logo_appear 1s ease forwards;
+	 animation-display: 0.5s;
+}
+ #preloader .krg_logo svg#krg_logo_1 {
+	 opacity: 0;
+	 animation: logo_appear 0.7s ease forwards, logo_flicker 2s ease forwards infinite;
+	 animation-delay: 0.6s, 1.2s;
+}
+ #preloader .krg_logo svg#krg_logo_2 {
+	 opacity: 0;
+	 animation: logo_appear 0.7s ease forwards, logo_flicker 2s ease forwards infinite;
+	 animation-delay: 0.7s, 1.4s;
+}
+ #preloader .krg_logo svg#krg_logo_3 {
+	 opacity: 0;
+	 animation: logo_appear 0.7s ease forwards, logo_flicker 2s ease forwards infinite;
+	 animation-delay: 0.8s, 1.6s;
+}
+ #preloader .krg_logo svg#krg_logo_4 {
+	 opacity: 0;
+	 animation: logo_appear 0.7s ease forwards, logo_flicker 2s ease forwards infinite;
+	 animation-delay: 0.9s, 1.8s;
+}
+ #preloader .krg_logo svg#krg_logo_5 {
+	 opacity: 0;
+	 animation: logo_appear 0.7s ease forwards, logo_flicker 2s ease forwards infinite;
+	 animation-delay: 1s, 2s;
+}
+
 `;
