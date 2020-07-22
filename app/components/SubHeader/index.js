@@ -19,10 +19,10 @@ const Div = styled.div`
   }
 
   .anticon-lock {
-    color: red;
+    color: white;
   }
   .anticon-unlock {
-    color: blue;
+    color: white;
   }
 `;
 

@@ -10,7 +10,7 @@ import { FormattedMessage } from 'react-intl';
 
 const H1 = styled.h1`
   font-size: 22px;
-  color: rgba(0, 0, 0, 0.55);
+  color: white;
   font-weight: 400;
 `;
 

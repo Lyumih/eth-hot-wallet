@@ -64,6 +64,14 @@ injectGlobal`
     color: white!important;
   }
 
+  .spin-white > .ant-spin-text {
+    color: white;
+  }
+
+  .spin-white > .ant-spin-dot > .ant-spin-dot-item {
+    background: white!important;
+  }
+
 
  #preloader {
 	 width: 100%;
@@ -142,5 +150,6 @@ injectGlobal`
 	 animation: logo_appear 0.7s ease forwards, logo_flicker 2s ease forwards infinite;
 	 animation-delay: 1s, 2s;
 }
+
 
 `;
