@@ -30,7 +30,7 @@ function GenerateWalletModal(props) {
       onOk={onGenerateKeystore}
       onCancel={onGenerateWalletCancel}
       footer={[
-        <Button key="submit" type="primary" size="large" onClick={onGenerateKeystore}>
+        <Button key="submit"  ghost size="large" onClick={onGenerateKeystore}>
           <FormattedMessage id="create" />
         </Button>,
       ]}

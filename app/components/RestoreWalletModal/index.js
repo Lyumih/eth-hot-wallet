@@ -43,7 +43,7 @@ function RestoreWalletModal(props, context) {
       onCancel={onRestoreWalletCancel}
       footer={[
         restoreWalletError ? errorComponent : null,
-        <Button key="submit" type="primary" size="large" onClick={onRestoreWalletFromSeed} >
+        <Button key="submit" ghost size="large" onClick={onRestoreWalletFromSeed} >
           <FormattedMessage id="restore" />
         </Button >,
       ]}

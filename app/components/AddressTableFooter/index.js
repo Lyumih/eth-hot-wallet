@@ -68,13 +68,13 @@ function AddressTableFooter(props, { intl }) {
         popconfirmMsg={intl.formatMessage({ id: 'refreshExchangeRates' })}
       />
       <br />
-      <IconButton
-        text={intl.formatMessage({ id: 'selectTokens' })}
-        icon="bars"
-        onClick={onShowTokenChooser}
-        type="primary"
-        // onClick, loading, error, disabled, popconfirmMsg
-      />
+      {/*<IconButton*/}
+      {/*  text={intl.formatMessage({ id: 'selectTokens' })}*/}
+      {/*  icon="bars"*/}
+      {/*  onClick={onShowTokenChooser}*/}
+
+      {/*  // onClick, loading, error, disabled, popconfirmMsg*/}
+      {/*/>*/}
       <br /><br />
     </Div>
   );

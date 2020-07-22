@@ -83,7 +83,7 @@ function Header(props) {
 
   return (
     <HeaderWrapped className="clearfix">
-      <Row type="flex" align="middle" justify="space-between" style={{ backgroundColor: '#fff' }}>
+      <Row type="flex" align="middle" justify="space-between" >
         <Col sm={{ span: 8, offset: 1 }} xs={24}>
           <Row type="flex" align="middle">
             <Col sm={{ span: 8, offset: 2 }} xs={24}>

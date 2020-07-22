@@ -21,8 +21,14 @@ const AddrTable = styled(Table)`
   max-width: 860px;
   margin-left: auto;
   margin-right: auto;
+  th {
+    background: transparent!important;
+  }
   tbody{
-    background: white;
+    background: transparent;
+  }
+  tr:hover > td{
+    background: transparent;
   }
   .ant-table{
     font-size: 13px !important;
@@ -30,6 +36,9 @@ const AddrTable = styled(Table)`
   th.columnCenter,
   td.columnCenter{
     text-align: center;
+  }
+  td,th span {
+    color: white;
   }
 `;
 
@@ -245,6 +254,7 @@ function AddressTable(props) {
         filters={[{
           text: <FormattedMessage id="removeEmpty" />,
           value: '0 ETH',
+
         }]}
         onFilter={(value, record) => record.balance !== value}
       />

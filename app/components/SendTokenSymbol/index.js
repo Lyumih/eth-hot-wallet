@@ -27,6 +27,7 @@ function SendTokenSymbol(props) {
         style={{ width: 85 }}
         onChange={(tokenSymbol) => onChangeFrom(null, tokenSymbol)}
         disabled={tokenInfoList.length === 1 || locked}
+        className="bg-transparent"
       >
         {optionsList}
       </Select >
