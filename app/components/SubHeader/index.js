@@ -19,10 +19,10 @@ const Div = styled.div`
   }
 
   .anticon-lock {
-    color: red;
+    color: white;
   }
   .anticon-unlock {
-    color: blue;
+    color: white;
   }
 `;
 
@@ -63,6 +63,8 @@ function SubHeader(props) {
       title={<FormattedMessage id="deleteAlertMessage" />}
       onConfirm={onCloseWallet}
       okText={<FormattedMessage id="confirm" />}
+      okType={"ghost"}
+
       cancelText={<FormattedMessage id="abort" />}
     >
       <Button key="close_wallet" type="default" ghost icon="close-square-o" size="large">

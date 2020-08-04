@@ -1,6 +1,6 @@
 {
   "homepage": "Homepage",
-  "walletName": "KRG wallet",
+  "walletName": "KRG Wallet",
   "newWallet": "New wallet",
   "restoreWallet": "Restore wallet",
   "closeWallet": "Close wallet",
@@ -8,7 +8,7 @@
   "unlockWallet": "Unlock wallet",
   "welcome": "Welcome to",
   "zeroClient": "is a zero client.",
-  "toBegin": "To begin, create or restore Ethereum wallet",
+  "toBegin": "To begin, create or restore KRG Wallet",
   "ok": "Ok",
   "reset": "Reset",
   "create": "Create",
