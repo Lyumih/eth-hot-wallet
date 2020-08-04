@@ -258,12 +258,12 @@ function AddressTable(props) {
         }]}
         onFilter={(value, record) => record.balance !== value}
       />
-      <Column
+      {/* <Column
         title={<CurrencyDropdown {...currencyDropdownProps} />}
         dataIndex="convert"
         key="convert"
         width="80px"
-      />
+      /> */}
       <Column
         width="75px"
         title={<FormattedMessage id="action" />}
