@@ -53,6 +53,14 @@ injectGlobal`
     background: transparent!important;
   }
 
+  .ant-dropdown-menu {
+    background: white!important;
+  }
+
+  .ant-dropdown-menu-item {
+    background: transparent!important;
+  }
+
   .ant-btn-background-ghost:hover, .ant-btn-background-ghost:focus {
     border-color: white!important;
     color: white!important;
@@ -74,81 +82,82 @@ injectGlobal`
 
 
  #preloader {
-	 width: 100%;
-	 height: 100%;
-	 height: 100vh;
-	 display: flex;
-	 align-items: center;
-	 justify-content: center;
-	 margin: 0;
-	 padding: 0;
-	 background: radial-gradient(closest-corner, #9231f3 0%, #1105fd 90%);
+  width: 100%;
+  height: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(closest-corner, #9231f3 0%, #1105fd 90%);
 }
  #preloader .krg_logo {
-	 width: 70px;
-	 height: 150px;
-	 position: relative;
-	 display: block;
+  width: 70px;
+  height: 150px;
+  position: relative;
+  display: block;
 }
  @keyframes logo_appear {
-	 0% {
-		 opacity: 0;
-		 transform: translateY(-10px);
-	}
-	 100% {
-		 opacity: 1;
-		 transform: translateY(0px);
-	}
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+}
 }
  @keyframes logo_flicker {
-	 0% {
-		 opacity: 1;
-	}
-	 50% {
-		 opacity: 0.6;
-	}
-	 100% {
-		 opacity: 1;
-	}
+  0% {
+    opacity: 1;
+}
+  50% {
+    opacity: 0.6;
+}
+  100% {
+    opacity: 1;
+}
 }
  #preloader .krg_logo svg {
-	 position: absolute;
-	 display: block;
-	 width: 100%;
-	 height: 100%;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
  #preloader .krg_logo svg path {
-	 fill: #fff;
+  fill: #fff;
 }
  #preloader .krg_logo svg#krg_logo_1 {
-	 opacity: 0;
-	 animation: logo_appear 1s ease forwards;
-	 animation-display: 0.5s;
+  opacity: 0;
+  animation: logo_appear 1s ease forwards;
+  animation-display: 0.5s;
 }
  #preloader .krg_logo svg#krg_logo_1 {
-	 opacity: 0;
-	 animation: logo_appear 0.7s ease forwards, logo_flicker 2s ease forwards infinite;
-	 animation-delay: 0.6s, 1.2s;
+  opacity: 0;
+  animation: logo_appear 0.7s ease forwards, logo_flicker 2s ease forwards infinite;
+  animation-delay: 0.6s, 1.2s;
 }
  #preloader .krg_logo svg#krg_logo_2 {
-	 opacity: 0;
-	 animation: logo_appear 0.7s ease forwards, logo_flicker 2s ease forwards infinite;
-	 animation-delay: 0.7s, 1.4s;
+  opacity: 0;
+  animation: logo_appear 0.7s ease forwards, logo_flicker 2s ease forwards infinite;
+  animation-delay: 0.7s, 1.4s;
 }
  #preloader .krg_logo svg#krg_logo_3 {
-	 opacity: 0;
-	 animation: logo_appear 0.7s ease forwards, logo_flicker 2s ease forwards infinite;
-	 animation-delay: 0.8s, 1.6s;
+  opacity: 0;
+  animation: logo_appear 0.7s ease forwards, logo_flicker 2s ease forwards infinite;
+  animation-delay: 0.8s, 1.6s;
 }
  #preloader .krg_logo svg#krg_logo_4 {
-	 opacity: 0;
-	 animation: logo_appear 0.7s ease forwards, logo_flicker 2s ease forwards infinite;
-	 animation-delay: 0.9s, 1.8s;
+  opacity: 0;
+  animation: logo_appear 0.7s ease forwards, logo_flicker 2s ease forwards infinite;
+  animation-delay: 0.9s, 1.8s;
 }
  #preloader .krg_logo svg#krg_logo_5 {
-	 opacity: 0;
-	 animation: logo_appear 0.7s ease forwards, logo_flicker 2s ease forwards infinite;
-	 animation-delay: 1s, 2s;
+  opacity: 0;
+  animation: logo_appear 0.7s ease forwards, logo_flicker 2s ease forwards infinite;
+  animation-delay: 1s, 2s;
+  
 }
 
 
