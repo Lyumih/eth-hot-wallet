@@ -198,7 +198,7 @@ function AddressTable(props) {
         title={<FormattedMessage id="address" />}
         dataIndex="address"
         key="address"
-        width="267px"
+        width="250px"
         className="columnCenter"
         colSpan="1"
         rowSpan="3"

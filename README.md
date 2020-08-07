@@ -1,14 +1,14 @@
 # ETH-Hot-Wallet 
 
-### Ethereum open source wallet / web wallet / zero client
+## Ethereum wallet with ERC20 support - A web wallet 
 
 ![eth-hot-wallet ethereum wallet preview](https://paullaux.github.io/eth-hot-wallet/docs/images/eth-hot-wallet-ethereum.PNG)
 
 https://eth-hot-wallet.com
 
-#### Work in progress
+### Technical review article: [How to build an Ethereum Wallet web app (Medium)](https://medium.freecodecamp.org/how-to-build-an-ethereum-wallet-web-app-ac77dcaac573)
 
-##### Created by Paul Laux, [@dr_laux](https://twitter.com/dr_laux) for announcements
+###### Created by Paul Laux, [@dr_laux](https://twitter.com/dr_laux) for announcements
 
 ### Core components
 
