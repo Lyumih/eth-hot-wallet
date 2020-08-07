@@ -58,7 +58,7 @@ function AddressTableFooter(props, { intl }) {
         disabled={!networkReady}
         popconfirmMsg={intl.formatMessage({ id: 'refreshBalance' })}
       />
-      <IconButton
+      {/* <IconButton
         text={intl.formatMessage({ id: 'updateRates' })}
         icon="global"
         onClick={onGetExchangeRates}
@@ -66,7 +66,7 @@ function AddressTableFooter(props, { intl }) {
         error={getExchangeRatesError}
         disabled={!networkReady}
         popconfirmMsg={intl.formatMessage({ id: 'refreshExchangeRates' })}
-      />
+      /> */}
       <br />
       {/*<IconButton*/}
       {/*  text={intl.formatMessage({ id: 'selectTokens' })}*/}

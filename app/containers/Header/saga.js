@@ -479,7 +479,7 @@ export default function* defaultSaga() {
   // yield takeLatest(LOAD_NETWORK, checkFaucetApi);
   yield takeLatest(COMFIRM_SEND_TRANSACTION, confirmSendTransaction);
   yield takeLatest(SEND_TRANSACTION, SendTransaction);
-  yield takeLatest(GET_EXCHANGE_RATES, getRates);
+  // yield takeLatest(GET_EXCHANGE_RATES, getRates);
 
   yield takeLatest(CHECK_FAUCET, checkFaucetApi);
   yield takeLatest(ASK_FAUCET, askFaucetApi);
