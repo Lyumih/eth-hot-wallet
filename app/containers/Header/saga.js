@@ -412,8 +412,8 @@ export function* getRates() {
     }
 
     // Call our request helper (see 'utils/request')
-    // const apiRates = online ? (yield call(request, requestURL)) : dummyRates;
-    const apiRates =  (yield call(request, requestURL));
+    const apiRates = online ? (yield call(request, requestURL)) : dummyRates;
+    // const apiRates =  (yield call(request, requestURL));
 
     // const apiRates = (yield call(request, requestURL, { mode: 'no-cors' }));
     // const apiRates = dummyRates;
