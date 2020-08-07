@@ -40,7 +40,8 @@ function checkStatus(response) {
  * @return {object}           The response data
  */
 export default function request(url, options) {
-  return fetch(url, options)
+  console.log('>>>1 ', url, options);
+  return fetch(url, { ...options, mode: 'no-cors' })
     .then(checkStatus)
     .then(parseJSON);
 }
