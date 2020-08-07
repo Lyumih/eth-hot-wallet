@@ -406,12 +406,18 @@ export function* getRates() {
       market_cap_eur: '23954572799.0',
     }];
 
+
     if (!online) {
       dummyRates = require('./tests/dummyRates').dummyRates; // eslint-disable-line
     }
 
     // Call our request helper (see 'utils/request')
     const apiRates = online ? (yield call(request, requestURL)) : dummyRates;
+    // const apiRates =  (yield call(request, requestURL));
+
+    // const apiRates = (yield call(request, requestURL, { mode: 'no-cors' }));
+    // const apiRates = dummyRates;
+
 
     // console.log(apiPrices);
 
