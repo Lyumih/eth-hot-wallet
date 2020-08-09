@@ -44,12 +44,12 @@ module.exports = require('./webpack.base.babel')({
       inject: true,
     }),
 
-    new WebpackMonitor({
-      capture: true, // -> default 'true'
-      target: '../monitor/myStatsStore.json', // default -> '../monitor/stats.json'
-      launch: false, // -> default 'false'
-      port: 3030, // default -> 8081
-    }),
+    // new WebpackMonitor({
+    //   capture: true, // -> default 'true'
+    //   target: '../monitor/myStatsStore.json', // default -> '../monitor/stats.json'
+    //   launch: false, // -> default 'false'
+    //   port: 3030, // default -> 8081
+    // }),
 
     // Put it in the end to capture all the HtmlWebpackPlugin's
     // assets manipulations and do leak its manipulations to HtmlWebpackPlugin
