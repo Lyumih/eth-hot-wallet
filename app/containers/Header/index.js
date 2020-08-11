@@ -7,19 +7,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-// import { FormattedMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
 import { Row, Col } from 'antd';
 
-
 import NetworkIndicator from 'components/NetworkIndicator';
 import Logo from 'components/Logo';
 import NetworkMenu from 'components/NetworkMenu';
+import LanguageMenu from 'components/LanguageMenu';
 
 // import { changeBalance } from 'containers/HomePage/actions';
+import { makeSelectLocale } from 'containers/LanguageProvider/selectors';
+import { changeLocale } from 'containers/LanguageProvider/actions';
 
 import {
   makeSelectNetworkReady,
@@ -58,6 +60,8 @@ function Header(props) {
     blockNumber,
     availableNetworks,
     onLoadNetwork,
+    locale,
+    changeLanguage,
    } = props;
 
   const networkIndicatorProps = {
@@ -72,16 +76,35 @@ function Header(props) {
     onLoadNetwork,
   };
 
+  const languageMenuProps = {
+    locale,
+    changeLanguage,
+  };
+
   return (
     <HeaderWrapped className="clearfix">
-      <Row type="flex" align="middle" justify="space-between" style={{ backgroundColor: '#fff' }}>
-        <Col sm={{ span: 6, offset: 1 }} xs={24}>
-          <Logo />
+      <Row type="flex" align="middle" justify="space-between" >
+        <Col sm={{ span: 8, offset: 1 }} xs={24}>
+          <Row type="flex" align="middle">
+            <Col sm={{ span: 8, offset: 2 }} xs={24}>
+              <Logo />
+            </Col>
+            {/* <Col sm={{ span: 12 }} xs={24} style={{ textAlign: 'left' }}>
+              <a href="https://ouroboros-crypto.com/" target="_blank" rel="noopener">
+                <FormattedMessage id="homepage" />
+              </a>
+            </Col> */}
+          </Row>
         </Col>
-        <Col sm={{ span: 8, offset: 2 }} xs={24}>
+        <Col sm={{ span: 9, offset: 2 }} xs={24}>
           <Row type="flex" align="middle" justify="center">
             <NetworkIndicator {...networkIndicatorProps} />
-            <NetworkMenu {...networkMenuProps} />
+            {
+              process.env.NODE_ENV !== 'production' && (
+                <NetworkMenu {...networkMenuProps} />
+              )
+            }
+            <LanguageMenu {...languageMenuProps} />
           </Row>
         </Col>
       </Row >
@@ -102,6 +125,8 @@ Header.propTypes = {
   networkName: PropTypes.string,
   availableNetworks: PropTypes.object,
   blockNumber: PropTypes.number,
+  locale: PropTypes.string,
+  changeLanguage: PropTypes.func,
 
   /* checkingBalanceDoneTime: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   checkingBalances: PropTypes.bool,
@@ -123,6 +148,7 @@ const mapStateToProps = createStructuredSelector({
   askFaucetLoading: makeSelectAskFaucetLoading(),
   askFaucetSuccess: makeSelectAskFaucetSuccess(),
   askFaucetError: makeSelectAskFaucetError(),
+  locale: makeSelectLocale(),
 });
 
 function mapDispatchToProps(dispatch) {
@@ -130,6 +156,9 @@ function mapDispatchToProps(dispatch) {
     onLoadNetwork: (name) => {
       // if (evt !== undefined && evt.preventDefault) evt.preventDefault();
       dispatch(loadNetwork(name));
+    },
+    changeLanguage: (locale) => {
+      dispatch(changeLocale(locale));
     },
   };
 }

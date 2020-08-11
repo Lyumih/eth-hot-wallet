@@ -19,7 +19,7 @@ import { createBrowserHistory as createHistory } from 'history'
 import App from 'containers/App';
 
 // Import Language Provider
-// import LanguageProvider from 'containers/LanguageProvider';
+import LanguageProvider from 'containers/LanguageProvider';
 
 // Load the favicon, the manifest.json file and the .htaccess file
 /* eslint-disable import/no-unresolved, import/extensions */
@@ -54,38 +54,40 @@ import '!file-loader?name=[name]!./vendor/github/CNAME'; // for github - domain 
 /* eslint-enable import/no-unresolved, import/extensions */
 
 // token icons
-import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/bat.png';
-import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/bnb.png';
-import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/bnt.png';
-import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/dgd.png';
-import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/eos.png';
+import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/ouro.png';
+import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/krg.png';
 import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/eth.png';
-import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/ethos.png';
-import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/fun.png';
-import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/gnt.png';
-import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/icx.png';
-import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/knc.png';
-import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/mkr.png';
-import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/mero.png';
-import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/omg.png';
-import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/qash.png';
-import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/qsp.png';
-import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/qtum.png';
-import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/rdn.png';
-import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/rep.png';
-import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/req.png';
-import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/rtt.png';
-import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/snt.png';
-import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/salt.png';
-import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/symb.png';
-import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/trx.png';
-import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/zrx.png';
+// import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/bat.png';
+// import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/bnb.png';
+// import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/bnt.png';
+// import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/dgd.png';
+// import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/eos.png';
+// import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/ethos.png';
+// import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/fun.png';
+// import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/gnt.png';
+// import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/icx.png';
+// import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/knc.png';
+// import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/mkr.png';
+// import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/mero.png';
+// import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/omg.png';
+// import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/qash.png';
+// import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/qsp.png';
+// import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/qtum.png';
+// import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/rdn.png';
+// import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/rep.png';
+// import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/req.png';
+// import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/rtt.png';
+// import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/snt.png';
+// import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/salt.png';
+// import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/symb.png';
+// import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/trx.png';
+// import '!file-loader?name=token-icons/[name].[ext]!./images/token-icons/zrx.png';
 
 import configureStore from './store';
 
 // Will be added in the future
 // Import i18n messages
-// import { translationMessages } from './i18n';
+import { translationMessages } from './i18n';
 
 // Import CSS reset and Global Styles
 import './global-styles';
@@ -99,11 +101,11 @@ const MOUNT_NODE = document.getElementById('app');
 const render = (messages) => { // eslint-disable-line
   ReactDOM.render(
     <Provider store={store}>
-      {/* <LanguageProvider messages={messages}> */}
-      <ConnectedRouter history={history}>
-        <App />
-      </ConnectedRouter>
-      {/* </LanguageProvider> */}
+      <LanguageProvider messages={messages}>
+        <ConnectedRouter history={history}>
+          <App />
+        </ConnectedRouter>
+      </LanguageProvider>
     </Provider>,
     MOUNT_NODE
   );
@@ -119,7 +121,7 @@ if (module.hot) {
   }); */
   module.hot.accept(['containers/App'], () => {
     ReactDOM.unmountComponentAtNode(MOUNT_NODE);
-    render();
+    render(translationMessages);
   });
 }
 
@@ -139,7 +141,7 @@ if (!window.Intl) {
 } else {
   render(translationMessages);
 } */
-render();
+render(translationMessages);
 
 // Install ServiceWorker and AppCache in the end since
 // it's not most important operation and if main code fails,

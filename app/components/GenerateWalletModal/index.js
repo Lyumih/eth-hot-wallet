@@ -8,6 +8,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 import { Modal, Button, Alert } from 'antd';
+import { FormattedMessage } from 'react-intl';
 
 function GenerateWalletModal(props) {
   const {
@@ -25,19 +26,24 @@ function GenerateWalletModal(props) {
   return (
     <Modal
       visible={isShowGenerateWallet}
-      title="New Wallet"
+      title={<FormattedMessage id="newWallet" />}
       onOk={onGenerateKeystore}
       onCancel={onGenerateWalletCancel}
       footer={[
-        <Button key="submit" type="primary" size="large" onClick={onGenerateKeystore}>
-          Create
+        <Button key="submit"  ghost size="large" onClick={onGenerateKeystore}>
+          <FormattedMessage id="create" />
         </Button>,
       ]}
     >
       <Alert
-        message={<b>The seed is imposible to recover if lost</b>}
-        description={<b>Copy the generated seed to a safe location.<br />
-                        HDPathString: m/44'/60'/0'/0.<br /> Recover lost password using the seed.</b>} // eslint-disable-line
+        message={<b><FormattedMessage id="seedInfo" /></b>}
+        description={(
+          <b>
+            <FormattedMessage id="copySeed" />
+            <br /> HDPathString: m/44&apos;/60&apos;/0&apos;/0.<br />
+            <FormattedMessage id="recoverPassword" />
+          </b>
+        )}
         type="warning"
         showIcon
         closable
@@ -50,7 +56,7 @@ function GenerateWalletModal(props) {
       />
       <br />
       <Alert
-        message="Password for browser encryption:"
+        message={<FormattedMessage id="passwordEncryption" />}
         description={<b>{password}</b>}
         type="info"
       />

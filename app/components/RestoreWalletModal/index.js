@@ -8,6 +8,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Modal, Button, Input, Icon, Tooltip } from 'antd';
+import { FormattedMessage } from 'react-intl';
 
 const Div = styled.div`
   margin-top: 12px;
@@ -24,7 +25,7 @@ const Description = styled.div`
   margin-bottom: 10px;
 `;
 
-function RestoreWalletModal(props) {
+function RestoreWalletModal(props, context) {
   const { isShowRestoreWallet, userSeed, userPassword, restoreWalletError, onChangeUserSeed, onChangeUserPassword, onRestoreWalletCancel, onRestoreWalletFromSeed } = props;
   // const suffix = userSeed ? <Icon type="close-circle" onClick={this.emitEmpty} /> : null;
   const errorComponent =
@@ -37,19 +38,19 @@ function RestoreWalletModal(props) {
   return (
     <Modal
       visible={isShowRestoreWallet}
-      title="Restore Wallet"
+      title={<FormattedMessage id="restoreWallet" />}
       onOk={onRestoreWalletCancel}
       onCancel={onRestoreWalletCancel}
       footer={[
         restoreWalletError ? errorComponent : null,
-        <Button key="submit" type="primary" size="large" onClick={onRestoreWalletFromSeed} >
-          Restore
+        <Button key="submit" ghost size="large" onClick={onRestoreWalletFromSeed} >
+          <FormattedMessage id="restore" />
         </Button >,
       ]}
     >
-      <Description> {"HDPathString m/44'/60'/0'/0 is used for address generation"}</Description>
+      <Description> {"HDPathString m/44'/60'/0'/0"} <FormattedMessage id="addressGeneration" /></Description>
       <Input
-        placeholder="Enter seed"
+        placeholder={context.intl.formatMessage({ id: 'seedPlaceholder' })}
         prefix={<Icon type="wallet" />}
         value={userSeed}
         onChange={onChangeUserSeed}
@@ -60,7 +61,7 @@ function RestoreWalletModal(props) {
       />
       <Div>
         <Input
-          placeholder="Enter password for keystore encryption"
+          placeholder={context.intl.formatMessage({ id: 'passwordPlaceholder' })}
           prefix={<Icon type="key" />}
           value={userPassword}
           onChange={onChangeUserPassword}
@@ -87,6 +88,10 @@ RestoreWalletModal.propTypes = {
   ]),
   onRestoreWalletCancel: PropTypes.func,
   onRestoreWalletFromSeed: PropTypes.func,
+};
+
+RestoreWalletModal.contextTypes = {
+  intl: PropTypes.object.isRequired,
 };
 
 export default RestoreWalletModal;

@@ -6,6 +6,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Button} from "antd";
 // import styled from 'styled-components';
 
 function RestoreWallet({ isShowRestoreWallet, userSeed, onChangeUserSeed, onRestoreWalletFromSeed }) {
@@ -36,9 +37,9 @@ function RestoreWallet({ isShowRestoreWallet, userSeed, onChangeUserSeed, onRest
             />
           </label>
           <br />
-          <button onClick={onRestoreWalletFromSeed}>
+          <Button ghost onClick={onRestoreWalletFromSeed}>
             Restore from seed
-          </button>
+          </Button>
         </form>
       </div>
     );

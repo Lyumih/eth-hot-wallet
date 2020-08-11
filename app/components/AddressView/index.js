@@ -8,6 +8,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Spin, Alert } from 'antd';
 import styled from 'styled-components';
+import { FormattedMessage } from 'react-intl';
 
 import AddressTable from 'components/AddressTable';
 // import AddressListStatus from 'components/AddressListStatus';
@@ -93,7 +94,7 @@ function AddressView(props) {
       spinning={generateKeystoreLoading}
       style={{ position: 'static' }}
       size="large"
-      tip="Loading..."
+      tip={<FormattedMessage id="loading" />}
     >
       {addressViewContent}
     </Spin>

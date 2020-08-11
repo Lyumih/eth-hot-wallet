@@ -8,7 +8,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Modal, Button } from 'antd';
 import { connect } from 'react-redux';
-// import { FormattedMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 
@@ -109,11 +109,11 @@ function SendToken(props) {
   const SendTokenSymbolProps = { sendTokenSymbol, tokenInfoList, onChangeFrom, locked };
 
   const modalFooter = [
-    <Button key="reset" type="default" size="large" onClick={onAbortTransaction}>
-      Reset
+    <Button key="reset" type="default" ghost size="large" onClick={onAbortTransaction}>
+      <FormattedMessage id="reset" />
     </Button>,
-    <Button key="close" type="default" size="large" onClick={onHideSendToken}>
-      Close
+    <Button key="close" type="default" ghost size="large" onClick={onHideSendToken}>
+      <FormattedMessage id="close" />
     </Button>,
   ];
 
@@ -121,18 +121,22 @@ function SendToken(props) {
     <div style={{ maxWidth: '600px', margin: 'auto' }}>
       <Modal
         visible={isShowSendToken}
-        title="Send Token"
+        title={<FormattedMessage id="sendToken" />}
         onOk={onHideSendToken}
         onCancel={onHideSendToken}
         footer={modalFooter}
+        className="modal-background"
+        wrapClassName="modal-wrap-background"
+
+
       >
         <SendFrom {...SendFromProps} /> <br />
         <SendAmount {...SendAmountProps} />
         <SendTokenSymbol {...SendTokenSymbolProps} /><br /> <br />
         <SendTo {...SendToProps} /> <br />
         <SendGasPrice {...SendGasPriceProps} /> <br />
-        <Button onClick={onConfirmSendTransaction} disabled={locked} >
-          Create transaction
+        <Button ghost onClick={onConfirmSendTransaction} disabled={locked} >
+          <FormattedMessage id="createTransaction" />
         </Button>
         <SendConfirmationView {...SendConfirmationViewProps} />
         <br />

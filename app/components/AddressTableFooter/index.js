@@ -19,7 +19,7 @@ const Div = styled.div`
 `;
 
 
-function AddressTableFooter(props) {
+function AddressTableFooter(props, { intl }) {
   const {
     checkingBalancesError,
     checkingBalances,
@@ -41,7 +41,7 @@ function AddressTableFooter(props) {
   return (
     <Div>
       <IconButton
-        text="Add address"
+        text={intl.formatMessage({ id: 'addAddress' })}
         icon="plus"
         onClick={onGenerateAddress}
         loading={addressListLoading}
@@ -50,31 +50,31 @@ function AddressTableFooter(props) {
         popconfirmMsg={false}
       />
       <IconButton
-        text="Check balances"
+        text={intl.formatMessage({ id: 'checkBalance' })}
         icon="reload"
         onClick={onCheckBalances}
         loading={checkingBalances}
         error={checkingBalancesError}
         disabled={!networkReady}
-        popconfirmMsg="Refresh balance?"
+        popconfirmMsg={intl.formatMessage({ id: 'refreshBalance' })}
       />
       <IconButton
-        text="Update rates"
+        text={intl.formatMessage({ id: 'updateRates' })}
         icon="global"
         onClick={onGetExchangeRates}
         loading={getExchangeRatesLoading}
         error={getExchangeRatesError}
         disabled={!networkReady}
-        popconfirmMsg="Refresh exchange rates?"
+        popconfirmMsg={intl.formatMessage({ id: 'refreshExchangeRates' })}
       />
       <br />
-      <IconButton
-        text="Select Tokens"
-        icon="bars"
-        onClick={onShowTokenChooser}
-        type="primary"
-        // onClick, loading, error, disabled, popconfirmMsg
-      />
+      {/*<IconButton*/}
+      {/*  text={intl.formatMessage({ id: 'selectTokens' })}*/}
+      {/*  icon="bars"*/}
+      {/*  onClick={onShowTokenChooser}*/}
+
+      {/*  // onClick, loading, error, disabled, popconfirmMsg*/}
+      {/*/>*/}
       <br /><br />
     </Div>
   );
@@ -95,6 +95,10 @@ AddressTableFooter.propTypes = {
   getExchangeRatesLoading: PropTypes.bool,
   getExchangeRatesError: PropTypes.oneOfType([PropTypes.object, PropTypes.string, PropTypes.bool]),
   onShowTokenChooser: PropTypes.func,
+};
+
+AddressTableFooter.contextTypes = {
+  intl: PropTypes.object.isRequired,
 };
 
 export default AddressTableFooter;

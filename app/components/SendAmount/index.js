@@ -8,11 +8,12 @@ import React from 'react';
 // import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { InputNumber } from 'antd';
+import { FormattedMessage } from 'react-intl';
 
 function SendAmount({ amount, onChangeAmount, locked }) {
   return (
     <span>
-      {'Amount: '}
+      <FormattedMessage id="amount" />{': '}
       <InputNumber
         value={amount}
         min={0}

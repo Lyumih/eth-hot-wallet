@@ -8,21 +8,27 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Table } from 'antd';
+import { FormattedMessage } from 'react-intl';
 
 import CurrencyDropdown from 'components/CurrencyDropdown';
 import TokenIcon from 'components/TokenIcon';
 
 const { Column } = Table;
 // import { LocaleProvider } from 'antd';
-// import { FormattedMessage } from 'react-intl';
 // import messages from './messages';
 
 const AddrTable = styled(Table)`
   max-width: 860px;
   margin-left: auto;
   margin-right: auto;
+  th {
+    background: transparent!important;
+  }
   tbody{
-    background: white;
+    background: transparent;
+  }
+  tr:hover > td{
+    background: transparent;
   }
   .ant-table{
     font-size: 13px !important;
@@ -30,6 +36,9 @@ const AddrTable = styled(Table)`
   th.columnCenter,
   td.columnCenter{
     text-align: center;
+  }
+  td,th span {
+    color: white;
   }
 `;
 
@@ -179,14 +188,14 @@ function AddressTable(props) {
       pagination={false}
       locale={{
         filterTitle: null,
-        filterConfirm: 'Ok',
-        filterReset: 'Reset',
+        filterConfirm: <FormattedMessage id="ok" />,
+        filterReset: <FormattedMessage id="reset" />,
         emptyText: 'No Data',
       }}
 
     >
       <Column
-        title="Address"
+        title={<FormattedMessage id="address" />}
         dataIndex="address"
         key="address"
         width="250px"
@@ -218,9 +227,9 @@ function AddressTable(props) {
         className="columnCenter"
       /> */}
       <Column
-        title="Icon"
+        title={<FormattedMessage id="icon" />}
         key="Icon"
-        width="50px"
+        width="60px"
         render={(text, record) => (
           <TokenIcon tokenSymbol={record.token} />
         )}
@@ -228,7 +237,7 @@ function AddressTable(props) {
       />
 
       <Column
-        title="Token"
+        title={<FormattedMessage id="token" />}
         dataIndex="token"
         key="token"
         width="65px"
@@ -238,32 +247,33 @@ function AddressTable(props) {
         )}
       />
       <Column
-        title="Balance"
+        title={<FormattedMessage id="balance" />}
         dataIndex="balance"
         key="balance"
         width="80px"
         filters={[{
-          text: 'Remove empty',
+          text: <FormattedMessage id="removeEmpty" />,
           value: '0 ETH',
+
         }]}
         onFilter={(value, record) => record.balance !== value}
       />
-      <Column
+      {/* <Column
         title={<CurrencyDropdown {...currencyDropdownProps} />}
         dataIndex="convert"
         key="convert"
         width="80px"
-      />
+      /> */}
       <Column
-        width="65px"
-        title="Action"
+        width="75px"
+        title={<FormattedMessage id="action" />}
         key="action"
         render={(text, record) => (
           <span>
             {/* <a href="#" >Show QR</a>
             <span className="ant-divider" /> */}
             {/* eslint-disable */}
-            <a onClick={() => onShowSendToken(record.address, record.token)}>Send</a>
+            <a onClick={() => onShowSendToken(record.address, record.token)}><FormattedMessage id="send" /></a>
             {/* eslint-enable */}
           </span>
         )}

@@ -6,13 +6,14 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 // import styled from 'styled-components';
 // import { generateKeystore } from 'containers/HomePage/actions';
 
 
 function SeedView({ loading, error, seed, password, onGenerateKeystore }) {
   if (loading) {
-    return <div> Loading....</div>;
+    return <FormattedMessage id="loading" />;
   }
 
   if (error !== false) {

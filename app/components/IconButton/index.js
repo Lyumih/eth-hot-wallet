@@ -22,6 +22,7 @@ const Btn = ({ error, popconfirm, text, loading, disabled, popconfirmMsg, onClic
   <Button
     icon={icon}
     type="default"
+    ghost
     size="large"
     onClick={popconfirmMsg ? null : onClick}
     disabled={disabled}
@@ -43,10 +44,16 @@ Btn.propTypes = {
   popconfirmMsg: PropTypes.oneOfType([PropTypes.object, PropTypes.string, PropTypes.bool]),
 };
 
-const handlePopconfirm = (popConfirmText, onClick, component) => {
+const handlePopconfirm = (popConfirmText, formatMessage, onClick, component) => {
   if (popConfirmText) {
     return (
-      <Popconfirm placement="top" title={popConfirmText} onConfirm={onClick} okText="Confirm" cancelText="Abort">
+      <Popconfirm
+        placement="top"
+        title={popConfirmText}
+        onConfirm={onClick}
+        okText={formatMessage({ id: 'confirm' })}
+        cancelText={formatMessage({ id: 'abort' })}
+      >
         {component}
         <span />
       </Popconfirm>
@@ -55,7 +62,7 @@ const handlePopconfirm = (popConfirmText, onClick, component) => {
   return (component);
 };
 
-function IconButton(props) {
+function IconButton(props, { intl }) {
   const { text, icon, onClick, loading, error, disabled, popconfirmMsg, ...btnProps } = props;
 
   const handleError = (err, component) => {
@@ -74,7 +81,7 @@ function IconButton(props) {
   const BtnProps = { text, icon, onClick, loading, error, disabled, popconfirmMsg, ...btnProps };
   return (
     handleError(error,
-      handlePopconfirm(popconfirmMsg, onClick,
+      handlePopconfirm(popconfirmMsg, intl.formatMessage, onClick,
         <Btn
           {...BtnProps}
 
@@ -94,6 +101,10 @@ IconButton.propTypes = {
   disabled: PropTypes.bool,
   popconfirmMsg: PropTypes.oneOfType([PropTypes.object, PropTypes.string, PropTypes.bool]),
 
+};
+
+IconButton.contextTypes = {
+  intl: PropTypes.object.isRequired,
 };
 
 

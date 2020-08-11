@@ -7,6 +7,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Select } from 'antd';
+import { FormattedMessage } from 'react-intl';
 const Option = Select.Option;
 // import styled from 'styled-components';
 
@@ -20,12 +21,13 @@ function SendTokenSymbol(props) {
 
   return (
     <span>
-      {' Token: '}
+      <FormattedMessage id="token" />{': '}
       <Select
         value={sendTokenSymbol}
         style={{ width: 85 }}
         onChange={(tokenSymbol) => onChangeFrom(null, tokenSymbol)}
         disabled={tokenInfoList.length === 1 || locked}
+        className="bg-transparent"
       >
         {optionsList}
       </Select >
