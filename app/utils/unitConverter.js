@@ -1,4 +1,6 @@
 import BigNumber from 'bignumber.js';
+import {URL_API_ALTERNATIVE_WITH_CORS_HELPER} from 'utils/constants'
+
 // limit presision for inverse
 BigNumber.config({ POW_PRECISION: 10 });
 
@@ -28,16 +30,20 @@ const Output = {
 /* map to generate convertion rate for each currency
 *  path represent the place inside object
 */
+
+const urlTickerEtherium = `${URL_API_ALTERNATIVE_WITH_CORS_HELPER}/v1/ticker/ethereum/?convert=EUR`
+const urlTicker = `${URL_API_ALTERNATIVE_WITH_CORS_HELPER}/v1/ticker/?convert=EUR`
+
 const ratesMaps =
   {
-    'https://api.coinmarketcap.com/v1/ticker/ethereum/?convert=EUR': {
+    [urlTickerEtherium]: {
       eth_eth: { path: { const: 1 }, isInverse: false, name: 'ETH' },
       eth_usd: { path: { symbol: 'eth', key: 'price_usd' }, name: 'USD' },
       eth_btc: { path: { symbol: 'eth', key: 'price_btc' }, name: 'BTC' },
       eth_eur: { path: { symbol: 'eth', key: 'price_eur' }, name: 'EURO' },
     },
 
-    'https://api.coinmarketcap.com/v1/ticker/?convert=EUR': {
+    [urlTicker]: {
       eth_eth: { path: { const: 1 }, name: 'ETH' },
       eth_usd: { path: { symbol: 'eth', key: 'price_usd' }, name: 'USD' },
       eth_btc: { path: { symbol: 'eth', key: 'price_btc' }, name: 'BTC' },
@@ -83,6 +89,7 @@ const addPathsForTokens = (ratesMap, tokenList) => {
  */
 export default function extractRates(apiRates, requestUrl, tokenList) {
   let ratesMap = ratesMaps[requestUrl];
+  // console.log(">>> Rates maps ", ratesMaps)
   if (!ratesMap) {
     // No map found
     return {};

@@ -3,6 +3,8 @@ import SignerProvider from 'vendor/ethjs-provider-signer/ethjs-provider-signer';
 import BigNumber from 'bignumber.js';
 import { take, call, put, select, takeLatest, race, fork } from 'redux-saga/effects';
 
+import {URL_API_ALTERNATIVE_WITH_CORS_HELPER} from 'utils/constants'
+
 import {
   makeSelectKeystore,
   makeSelectAddressList,
@@ -144,7 +146,9 @@ export function* loadNetwork(action) {
 
       // actions after succesfull network load :
       yield put(checkBalances());
+      // console.log("Work yet");
       yield put(getExchangeRates());
+      // console.log("Work yet 2");
 
       // clear token list if changed network
 
@@ -384,7 +388,8 @@ function* watchPollData() {
 export function* getRates() {
   // const requestURL = 'https://api.coinmarketcap.com/v1/ticker/ethereum/?convert=EUR';
   // const requestURL = 'https://api.coinmarketcap.com/v1/ticker/?convert=EUR';
-  const requestURL = 'https://api.alternative.me/v1/ticker/?convert=EUR';
+  // const corsHelper = "https://cors-anywhere.herokuapp.com/"
+  const requestURL = `${URL_API_ALTERNATIVE_WITH_CORS_HELPER}/v1/ticker/?convert=EUR`
   try {
     let dummyRates = [{ // for testin in online = false mode
       id: 'ethereum',
@@ -407,19 +412,22 @@ export function* getRates() {
     }];
 
 
+    // console.log("+++ 1")
     if (!online) {
       dummyRates = require('./tests/dummyRates').dummyRates; // eslint-disable-line
     }
 
-    // Call our request helper (see 'utils/request')
-    const apiRates = online ? (yield call(request, requestURL)) : dummyRates;
-    // const apiRates =  (yield call(request, requestURL));
 
-    // const apiRates = (yield call(request, requestURL, { mode: 'no-cors' }));
+    // Call our request helper (see 'utils/request')
+    // const apiRates = online ? (yield call(request, requestURL)) : dummyRates;
+    const apiRates =  (yield call(request, requestURL, {
+      // mode: "no-cors"
+    }));
+
+
     // const apiRates = dummyRates;
 
 
-    // console.log(apiPrices);
 
     const tokenList = yield select(makeSelectTokenInfoList());
 
@@ -479,7 +487,7 @@ export default function* defaultSaga() {
   // yield takeLatest(LOAD_NETWORK, checkFaucetApi);
   yield takeLatest(COMFIRM_SEND_TRANSACTION, confirmSendTransaction);
   yield takeLatest(SEND_TRANSACTION, SendTransaction);
-  // yield takeLatest(GET_EXCHANGE_RATES, getRates);
+  yield takeLatest(GET_EXCHANGE_RATES, getRates);
 
   yield takeLatest(CHECK_FAUCET, checkFaucetApi);
   yield takeLatest(ASK_FAUCET, askFaucetApi);
