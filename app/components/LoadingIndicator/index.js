@@ -23,12 +23,12 @@ const StyledSpin = styled(Spin)`
   .ant-spin-dot > i {
     background: white!important;
   }
-`
+`;
 
 function LoadingIndicator() {
   return (
     <Div>
-      <StyledSpin size="large" tip="KGR Wallet" />
+      <StyledSpin size="large" tip="KRG Wallet" />
     </Div>
   );
 }

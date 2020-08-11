@@ -217,7 +217,7 @@ function AddressTable(props) {
           return obj;
         }}
       />
-      {/* <Column
+      <Column
         title="#"
         dataIndex="key"
         key="key"
@@ -225,7 +225,7 @@ function AddressTable(props) {
         sorter={(a, b) => parseInt(a.key, 10) - parseInt(b.key, 10)}
         sortOrder="ascend"
         className="columnCenter"
-      /> */}
+      />
       <Column
         title={<FormattedMessage id="icon" />}
         key="Icon"
@@ -258,12 +258,12 @@ function AddressTable(props) {
         }]}
         onFilter={(value, record) => record.balance !== value}
       />
-      {/* <Column
+      <Column
         title={<CurrencyDropdown {...currencyDropdownProps} />}
         dataIndex="convert"
         key="convert"
         width="80px"
-      /> */}
+      />
       <Column
         width="75px"
         title={<FormattedMessage id="action" />}
