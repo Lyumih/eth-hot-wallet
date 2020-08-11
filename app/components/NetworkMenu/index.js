@@ -28,7 +28,7 @@ function NetworkMenu(props) {
   let options;
   if (availableNetworks) {
     options = availableNetworks.map((network) =>
-      <StyledMenuItem key={network}><a tabIndex="0" ghost role="button" onClick={() => onLoadNetwork(network)}>{network}</a></StyledMenuItem>
+      <StyledMenuItem key={network}><a tabIndex="0"  role="button" onClick={() => onLoadNetwork(network)}>{network}</a></StyledMenuItem>
     );
   }
 

@@ -41,3 +41,7 @@ export const github = 'https://github.com/PaulLaux/eth-hot-wallet';
 // export const askFaucetAddress = 'http://localhost:3000/ask';
 export const checkFaucetAddress = 'https://m6b19m0fxh.execute-api.eu-west-1.amazonaws.com/dev/status';
 export const askFaucetAddress = 'https://m6b19m0fxh.execute-api.eu-west-1.amazonaws.com/dev/ask';
+
+export const URL_API_ALTERNATIVE="https://api.alternative.me"
+export const URL_HELPER_CORS="https://cors-anywhere.herokuapp.com"
+export const URL_API_ALTERNATIVE_WITH_CORS_HELPER=`${URL_HELPER_CORS}/${URL_API_ALTERNATIVE}`
