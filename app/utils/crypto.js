@@ -9,7 +9,9 @@ export default function generateString(len) {
     let array = new Uint8Array(MAXLEN);
     window.crypto.getRandomValues(array);
     array = Array.apply([], array); /* turn into non-typed array */
-    array = array.filter((x) => (x > 32 && x < 127));
+    // array = array.filter((x) => (x > 32 && x < 127));
+    //ONLY LETTERS AND NUMBERS
+    array = array.filter((x) => ((x > 47 && x < 58) || (x > 64 && x < 90)) || (x > 96 && x < 123));
       /* strip non-printables: if we transform into desirable range we have a propability bias, so I suppose we better skip this character */
     return String.fromCharCode.apply(String, array); // eslint-disable-line
   }
