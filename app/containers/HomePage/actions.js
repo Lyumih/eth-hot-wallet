@@ -446,7 +446,7 @@ export function generateAddress() {
  */
 export function generateAddressSuccess(newAddress, index, tokenList) {
   const tokenMap = createTokenMap(tokenList);// , index);
-  console.log(tokenMap);
+  // console.log(tokenMap);
 
   tokenMap.index = index;
   return {
@@ -542,7 +542,7 @@ export function unlockWalletError(error) {
  * @return {object} An action object with a type of SET_EXCHANGE_RATES and rates converted to proper format:
  */
 export function setExchangeRates(apiRates, requestURL, tokenList) {
-  console.log("START setExchangeRates", apiRates, requestURL, tokenList);
+  // console.log("START setExchangeRates", apiRates, requestURL, tokenList);
   const rates = extractRates(apiRates, requestURL, tokenList);
   return {
     type: SET_EXCHANGE_RATES,
@@ -675,7 +675,7 @@ export function loadWalletSuccess() {
  * @return {object} An action object with a type of LOAD_WALLET_ERROR
  */
 export function loadWalletError(error) {
-  console.log(error);
+  // console.log(error);
   return {
     type: LOAD_WALLET_ERROR,
     error,
