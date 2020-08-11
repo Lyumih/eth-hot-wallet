@@ -542,13 +542,14 @@ export function unlockWalletError(error) {
  * @return {object} An action object with a type of SET_EXCHANGE_RATES and rates converted to proper format:
  */
 export function setExchangeRates(apiRates, requestURL, tokenList) {
+  console.log("START setExchangeRates", apiRates, requestURL, tokenList);
   const rates = extractRates(apiRates, requestURL, tokenList);
   return {
     type: SET_EXCHANGE_RATES,
     rates,
   };
 }
-
+ 
 /**
  * Change selected curency to convert to
  *
