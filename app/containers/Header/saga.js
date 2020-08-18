@@ -146,9 +146,9 @@ export function* loadNetwork(action) {
 
       // actions after succesfull network load :
       yield put(checkBalances());
-      console.log("Work yet");
+      // console.log("Work yet");
       yield put(getExchangeRates());
-      console.log("Work yet 2");
+      // console.log("Work yet 2");
 
       // clear token list if changed network
 
@@ -412,16 +412,14 @@ export function* getRates() {
     }];
 
 
-    console.log("+++ 1")
+    // console.log("+++ 1")
     if (!online) {
       dummyRates = require('./tests/dummyRates').dummyRates; // eslint-disable-line
     }
 
-    console.log("+++ 2", online, dummyRates)
 
     // Call our request helper (see 'utils/request')
     // const apiRates = online ? (yield call(request, requestURL)) : dummyRates;
-    console.log('window', window)
     const apiRates =  (yield call(request, requestURL, {
       // mode: "no-cors"
     }));
@@ -430,7 +428,6 @@ export function* getRates() {
     // const apiRates = dummyRates;
 
 
-    console.log("+++", apiRates);
 
     const tokenList = yield select(makeSelectTokenInfoList());
 

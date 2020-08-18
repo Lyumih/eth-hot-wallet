@@ -8,13 +8,13 @@ import 'whatwg-fetch';
  * @return {object}          The parsed JSON from the request
  */
 function parseJSON(response) {
-  console.log("PARSE JSON", response)
+  // console.log("PARSE JSON", response)
   // if (response.status === 204 || response.status === 205) {
   //   return null;
   // }
   const data = response.json();
 
-  console.log("Data", data)
+  // console.log("Data", data)
   return data
 }
 
@@ -26,7 +26,7 @@ function parseJSON(response) {
  * @return {object|undefined} Returns either the response, or throws an error
  */
 function checkStatus(response) {
-  console.log("CHECK STATUS ",response, response.status)
+  // console.log("CHECK STATUS ",response, response.status)
   if (response.status >= 200 && response.status < 300) {
     return response;
   }
@@ -36,7 +36,7 @@ function checkStatus(response) {
 
   const error = new Error(response.statusText);
   error.response = response;
-  console.log("ERROR", error)
+  // console.log("ERROR", error)
   throw error;
 }
 
@@ -49,10 +49,10 @@ function checkStatus(response) {
  * @return {object}           The response data
  */
 export default function request(url, options={}) {
-  console.log('>>>2 ', url, options);
+  // console.log('>>>2 ', url, options);
   return fetch(url, options)
     .then(response => {
-      console.log("RRR ",response)
+      // console.log("RRR ",response)
       return checkStatus(response)
     })
     .then(parseJSON);

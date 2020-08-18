@@ -89,7 +89,7 @@ const addPathsForTokens = (ratesMap, tokenList) => {
  */
 export default function extractRates(apiRates, requestUrl, tokenList) {
   let ratesMap = ratesMaps[requestUrl];
-  console.log(">>> Rates maps ", ratesMaps)
+  // console.log(">>> Rates maps ", ratesMaps)
   if (!ratesMap) {
     // No map found
     return {};
