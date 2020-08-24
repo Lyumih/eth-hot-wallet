@@ -23,7 +23,7 @@ import TokenChooser from 'containers/TokenChooser';
 import GenerateWalletModal from 'components/GenerateWalletModal';
 import RestoreWalletModal from 'components/RestoreWalletModal';
 import SubHeader from 'components/SubHeader';
-// import PageFooter from 'components/PageFooter';
+import PageFooter from 'components/PageFooter';
 import { Content } from 'components/PageFooter/sticky';
 
 /* Header: */
@@ -254,7 +254,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
           <SendToken {...sendTokenProps} />
           {/*<TokenChooser {...tokenChooserProps} />*/}
         </Content>
-        {/* <PageFooter /> */}
+        <PageFooter />
       </div>
     );
   }
