@@ -23,7 +23,7 @@ import TokenChooser from 'containers/TokenChooser';
 import GenerateWalletModal from 'components/GenerateWalletModal';
 import RestoreWalletModal from 'components/RestoreWalletModal';
 import SubHeader from 'components/SubHeader';
-// import PageFooter from 'components/PageFooter';
+import PageFooter from 'components/PageFooter';
 import { Content } from 'components/PageFooter/sticky';
 
 /* Header: */
@@ -44,7 +44,6 @@ import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
 import reducer from './reducer';
 import saga from './saga';
-
 
 /* HomePage */
 import {
@@ -255,6 +254,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
           {/*<TokenChooser {...tokenChooserProps} />*/}
         </Content>
         {/* <PageFooter /> */}
+        
       </div>
     );
   }
