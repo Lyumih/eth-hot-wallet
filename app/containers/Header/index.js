@@ -23,6 +23,7 @@ import LanguageMenu from 'components/LanguageMenu';
 import { makeSelectLocale } from 'containers/LanguageProvider/selectors';
 import { changeLocale } from 'containers/LanguageProvider/actions';
 
+
 import {
   makeSelectNetworkReady,
   makeSelectLoading,
@@ -108,7 +109,7 @@ function Header(props) {
           </Row>
         </Col>
       </Row >
-    </HeaderWrapped >
+     </HeaderWrapped >
   );
 }
 

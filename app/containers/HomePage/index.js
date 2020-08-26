@@ -45,7 +45,6 @@ import injectSaga from 'utils/injectSaga';
 import reducer from './reducer';
 import saga from './saga';
 
-
 /* HomePage */
 import {
   generateWallet,
@@ -254,7 +253,8 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
           <SendToken {...sendTokenProps} />
           {/*<TokenChooser {...tokenChooserProps} />*/}
         </Content>
-        <PageFooter />
+        {/* <PageFooter /> */}
+        
       </div>
     );
   }
