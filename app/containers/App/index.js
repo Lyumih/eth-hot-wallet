@@ -18,6 +18,9 @@ import { Switch, Route } from 'react-router-dom';
 import HomePage from 'containers/HomePage/Loadable';
 // import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
+import { createGTag } from '../../metricks/googleMetricks'
+import { createYMetriks } from '../../metricks/ymetriks'
+
 export default class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
   render() {
@@ -27,6 +30,10 @@ export default class App extends React.PureComponent { // eslint-disable-line re
           <Route exact path="/" component={HomePage} />
           <Route component={HomePage} />
         </Switch>
+            {/* METRICKS */}
+            {/* <div dangerouslySetInnerHTML={createYMetriks()}></div>
+            <div dangerouslySetInnerHTML={createGTag()}></div> */}
+
       </div>
     );
   }
