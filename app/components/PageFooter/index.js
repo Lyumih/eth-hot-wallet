@@ -35,15 +35,16 @@ function PageFooter() {
           <input type="hidden" name="cmd" value="_pay"/>
           <input type="hidden" name="reset" value="1"/>
           <input type="hidden" name="merchant" value="86afdb1ad036c067549f4860191c8660"/>
-          <input type="hidden" name="item_name" value="KRG Token"/>
+          <input type="hidden" name="item_name" value="KRG Token test 1"/>
           <input type="hidden" name="currency" value="USD"/>
           <input type="hidden" name="amountf" value="1.00000000"/>
           <input type="hidden" name="quantity" value="1"/>
           <input type="hidden" name="allow_quantity" value="1"/>
           <input type="hidden" name="want_shipping" value="1"/>
-          <input type="hidden" name="allow_extra" value="0"/>
+          <input type="hidden" name="allow_extra" value="1"/>
           <input type="image" src="https://www.coinpayments.net/images/pub/buynow-wide-blue.png" alt="Купить используя CoinPayments.net"/>
         </form>
+
         </Col>
         {/* <Col sm={12} xs={24}>
           {'ETH Hot Wallet - '}
