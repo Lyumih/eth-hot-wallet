@@ -25,8 +25,8 @@ const Img = styled.img`
 function Logo() {
   return (
     <Div>
-      <Img alt="logo" src={walletLogo} />
-      <a href={website}>
+      <a href={website} target="_blank">
+        <Img alt="logo" src={walletLogo} />
         {/* ETH Hot Wallet */}
       </a>
     </Div>

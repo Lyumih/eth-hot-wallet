@@ -33,7 +33,7 @@ export const defaultNetwork = process.env.NODE_ENV === 'production' ? 'Main Net'
 export const localStorageKey = 'ks';
 
 // addresses:
-export const website = 'https://eth-hot-wallet.com';
+export const website = 'https://krg-token.com';
 export const github = 'https://github.com/PaulLaux/eth-hot-wallet';
 
 // APIs:
